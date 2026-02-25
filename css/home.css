@@ -193,7 +193,8 @@
   position: absolute;
   inset: -5%;
   background-size: cover;
-  background-position: center;
+  /* Shift left so the character (right side of each image) stays visible */
+  background-position: right;
   transition: transform 0.7s var(--easing);
   z-index: 0;
 }
