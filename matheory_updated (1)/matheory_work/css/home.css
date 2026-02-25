@@ -1,0 +1,321 @@
+/* ============================================================
+   HOME.CSS — Landing page / Universe Selector
+   MATHEORY © 2024
+   ============================================================ */
+
+/* ---- Header ---- */
+.home-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  padding: 24px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(3,8,16,0.96) 0%, transparent 100%);
+  transition: background 0.3s;
+}
+.home-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(125,211,252,0.5);
+  user-select: none;
+}
+.home-logo em {
+  color: #7dd3fc;
+  font-style: normal;
+}
+.home-nav {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+.home-nav a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.3s;
+}
+.home-nav a:hover { color: #7dd3fc; }
+.home-nav-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.home-nav-icons a {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.3s;
+}
+.home-nav-icons a:hover { color: #7dd3fc; }
+
+/* ---- Hero ---- */
+.home-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 24px 60px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/fundo.png');
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+  transform: scale(1.04);
+  transition: transform 0.1s linear;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(3,8,16,0.25) 0%,
+    rgba(3,8,16,0.05) 30%,
+    rgba(3,8,16,0.45) 65%,
+    rgba(3,8,16,1) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: heroEntrance 1.2s var(--easing) forwards;
+}
+@keyframes heroEntrance {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(3.8rem, 8.5vw, 9rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-shadow: 0 0 80px rgba(125,211,252,0.35), 0 6px 30px rgba(0,0,0,0.8);
+  margin-bottom: 16px;
+}
+.hero-title .glow {
+  color: #7dd3fc;
+  text-shadow:
+    0 0 40px rgba(125,211,252,0.9),
+    0 0 80px rgba(125,211,252,0.5),
+    0 0 120px rgba(125,211,252,0.2);
+}
+.hero-subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 48px;
+}
+.hero-scroll {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  animation: scrollBounce 2.2s ease-in-out infinite;
+  margin-top: 16px;
+}
+.hero-scroll i {
+  font-size: 1.1rem;
+  color: #7dd3fc;
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(9px); }
+}
+
+/* ---- Universe Selection Section ---- */
+.universe-section {
+  position: relative;
+  z-index: 2;
+  background: #030810;
+  padding: 0 40px 80px;
+}
+.universe-section-label {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: rgba(125,211,252,0.55);
+  padding: 40px 0 36px;
+}
+.universe-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ---- Universe Card ---- */
+.universe-card {
+  position: relative;
+  aspect-ratio: 3 / 4.2;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.45s var(--easing);
+  border: 1px solid rgba(255,255,255,0.07);
+  isolation: isolate;
+}
+.universe-card:hover {
+  transform: translateY(-10px) scale(1.015);
+  border-color: rgba(255,255,255,0.15);
+}
+.universe-card-bg {
+  position: absolute;
+  inset: -5%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s var(--easing);
+  z-index: 0;
+}
+.universe-card:hover .universe-card-bg {
+  transform: scale(1.1);
+}
+.universe-card-tint {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.5;
+  transition: opacity 0.4s;
+}
+.universe-card:hover .universe-card-tint { opacity: 0.7; }
+.universe-card-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+}
+.universe-card-body {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px 24px;
+}
+.universe-number {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 8px;
+}
+.universe-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  margin-bottom: 18px;
+  transition: text-shadow 0.3s;
+}
+.universe-enter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.28);
+  padding: 11px 20px;
+  border-radius: 2px;
+  transition: var(--transition);
+  width: fit-content;
+  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.04);
+}
+.universe-enter-btn i {
+  font-size: 0.75rem;
+  transition: transform 0.3s;
+}
+.universe-card:hover .universe-enter-btn i {
+  transform: translateX(4px);
+}
+
+/* Per-universe theming */
+.card-geek .universe-card-bg    { background-image: url('../assets/fundo_geek.png'); }
+.card-geek .universe-card-tint  { background: linear-gradient(135deg, rgba(0,40,90,0.6), rgba(60,10,160,0.4)); }
+.card-geek .universe-title      { color: #7dd3fc; text-shadow: 0 0 20px rgba(125,211,252,0.4); }
+.card-geek .universe-enter-btn  { border-color: rgba(125,211,252,0.4); color: #7dd3fc; }
+.card-geek:hover .universe-enter-btn { background: rgba(125,211,252,0.12); border-color: #7dd3fc; }
+
+.card-esporte .universe-card-bg   { background-image: url('../assets/fundo_sport.png'); }
+.card-esporte .universe-card-tint { background: linear-gradient(135deg, rgba(120,40,0,0.5), rgba(200,80,0,0.35)); }
+.card-esporte .universe-title     { color: #fb923c; text-shadow: 0 0 20px rgba(251,146,60,0.4); }
+.card-esporte .universe-enter-btn { border-color: rgba(251,146,60,0.4); color: #fb923c; }
+.card-esporte:hover .universe-enter-btn { background: rgba(251,146,60,0.12); border-color: #fb923c; }
+
+.card-crista .universe-card-bg   { background-image: url('../assets/fundo_geek.png'); filter: sepia(70%) saturate(0.5) hue-rotate(-10deg) brightness(0.6); }
+.card-crista .universe-card-tint { background: linear-gradient(135deg, rgba(80,50,0,0.6), rgba(160,110,0,0.35)); }
+.card-crista .universe-title     { color: #d4a843; text-shadow: 0 0 20px rgba(212,168,67,0.45); }
+.card-crista .universe-enter-btn { border-color: rgba(212,168,67,0.4); color: #d4a843; }
+.card-crista:hover .universe-enter-btn { background: rgba(212,168,67,0.12); border-color: #d4a843; }
+
+.card-street .universe-card-bg   { background-image: url('../assets/fundo_street.png'); }
+.card-street .universe-card-tint { background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(160,0,0,0.25)); }
+.card-street .universe-title     { color: #f87171; text-shadow: 0 0 20px rgba(248,113,113,0.4); }
+.card-street .universe-enter-btn { border-color: rgba(248,113,113,0.4); color: #f87171; }
+.card-street:hover .universe-enter-btn { background: rgba(248,113,113,0.12); border-color: #f87171; }
+
+/* ---- Home Footer ---- */
+.home-footer {
+  background: #030810;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 24px 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-footer p {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.12em;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .universe-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .home-header { padding: 18px 24px; }
+  .home-nav { display: none; }
+  .universe-section { padding: 0 20px 60px; }
+  .universe-grid { grid-template-columns: 1fr; gap: 12px; }
+  .universe-card { aspect-ratio: 16/9; }
+  .home-footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+}

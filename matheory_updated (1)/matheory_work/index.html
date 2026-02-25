@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="MATHEORY — Explore os universos. Vista aquilo que te representa." name="description"/>
+<title>MATHEORY — Entre no seu Universo</title>
+<link href="css/base.css" rel="stylesheet"/>
+<link href="css/home.css" rel="stylesheet"/>
+<link href="css/store.css" rel="stylesheet"/>
+<link href="css/universes.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+<canvas aria-hidden="true" id="stars-canvas"></canvas>
+<div aria-hidden="true" class="page-transition" id="transition-overlay">
+<div class="transition-logo" id="transition-label">MATHEORY</div>
+</div>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<!-- =====================================================
+     HOME PAGE
+     ===================================================== -->
+<div class="page active" id="page-home">
+<header class="home-header">
+<div class="home-logo">MA<em>THEORY</em></div>
+<nav class="home-nav">
+<a href="#">Início</a>
+<a href="#">Sobre</a>
+<a href="#">Loja</a>
+<a href="#">Contato</a>
+</nav>
+<div class="home-nav-icons">
+<a aria-label="Instagram" href="#"><i class="fab fa-instagram"></i></a>
+<a aria-label="YouTube" href="#"><i class="fab fa-youtube"></i></a>
+<a aria-label="Carrinho" href="#"><i class="fas fa-shopping-bag"></i></a>
+</div>
+</header>
+<section class="home-hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<p class="hero-eyebrow">Explore os universos · Vista aquilo que te representa</p>
+<h1 class="hero-title">Entre no seu<br/><span class="glow">Universo.</span></h1>
+<p class="hero-subtitle">Cada universo. Uma identidade. A sua.</p>
+<div aria-hidden="true" class="hero-scroll">
+<i class="fas fa-chevron-down"></i>
+<span>Escolha seu universo</span>
+</div>
+</div>
+</section>
+<section class="universe-section">
+<p class="universe-section-label">Selecione seu universo</p>
+<div class="universe-grid">
+<div class="universe-card card-geek" onclick="Navigation.enterUniverse('geek')" onkeydown="if(event.key==='Enter') Navigation.enterUniverse('geek')" role="button" tabindex="0">
+<div class="universe-card-bg"></div>
+<div class="universe-card-tint"></div>
+<div class="universe-card-gradient"></div>
+<div class="universe-card-body">
+<span class="universe-number">Universo · 01</span>
+<h2 class="universe-title">MATHEORY<br/>GEEK</h2>
+<div class="universe-enter-btn"><i class="fas fa-arrow-right"></i> Entrar no Universo</div>
+</div>
+</div>
+<div class="universe-card card-esporte" onclick="Navigation.enterUniverse('esporte')" onkeydown="if(event.key==='Enter') Navigation.enterUniverse('esporte')" role="button" tabindex="0">
+<div class="universe-card-bg"></div>
+<div class="universe-card-tint"></div>
+<div class="universe-card-gradient"></div>
+<div class="universe-card-body">
+<span class="universe-number">Universo · 02</span>
+<h2 class="universe-title">MATHEORY<br/>ESPORTE</h2>
+<div class="universe-enter-btn"><i class="fas fa-arrow-right"></i> Entrar no Universo</div>
+</div>
+</div>
+<div class="universe-card card-crista" onclick="Navigation.enterUniverse('crista')" onkeydown="if(event.key==='Enter') Navigation.enterUniverse('crista')" role="button" tabindex="0">
+<div class="universe-card-bg"></div>
+<div class="universe-card-tint"></div>
+<div class="universe-card-gradient"></div>
+<div class="universe-card-body">
+<span class="universe-number">Universo · 03</span>
+<h2 class="universe-title">MATHEORY<br/>CRISTÃ</h2>
+<div class="universe-enter-btn"><i class="fas fa-arrow-right"></i> Entrar no Universo</div>
+</div>
+</div>
+<div class="universe-card card-street" onclick="Navigation.enterUniverse('street')" onkeydown="if(event.key==='Enter') Navigation.enterUniverse('street')" role="button" tabindex="0">
+<div class="universe-card-bg"></div>
+<div class="universe-card-tint"></div>
+<div class="universe-card-gradient"></div>
+<div class="universe-card-body">
+<span class="universe-number">Universo · 04</span>
+<h2 class="universe-title">MATHEORY<br/>STREET</h2>
+<div class="universe-enter-btn"><i class="fas fa-arrow-right"></i> Entrar no Universo</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="home-footer">
+<p>© 2026 MATHEORY. Todos os direitos reservados.</p>
+<p>Feito com ✦ para quem vive intensamente.</p>
+</footer>
+</div>
+<!-- =====================================================
+     STORE PAGE TEMPLATE (macro used x4)
+     ===================================================== -->
+<!-- GEEK -->
+<div class="page store-page" id="page-geek">
+<header class="store-header">
+<div class="store-header-top">
+<button class="store-back-btn" onclick="Navigation.goHome()"><i class="fas fa-arrow-left"></i> Universos</button>
+<div class="store-logo">MATHEORY <small>Universo Geek</small></div>
+<div class="store-header-icons">
+<button aria-label="Buscar"><i class="fas fa-search"></i></button>
+<button aria-label="Favoritos"><i class="fas fa-heart"></i></button>
+<button aria-label="Carrinho" class="cart-btn-wrap" onclick="Cart.openDrawer()">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-count-badge" style="display:none">0</span>
+</button>
+</div>
+</div>
+<nav class="store-nav" id="nav-geek"></nav>
+</header>
+<section class="store-hero">
+<div class="store-hero-bg"></div>
+<div class="store-hero-overlay"></div>
+<div class="store-hero-content" id="hero-content-geek"></div>
+</section>
+<section class="store-section">
+<div class="section-header">
+<div><h2 class="section-title">Em Destaque</h2><p class="section-meta">Os produtos mais desejados</p></div>
+<a class="section-all-link" href="#">Ver todos <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="product-grid" id="products-geek"></div>
+</section>
+<div class="banner-strip" id="banner-geek"></div>
+<section class="store-section" style="padding-top:0">
+<div class="section-header">
+<div><h2 class="section-title">Categorias</h2><p class="section-meta">Encontre seu estilo</p></div>
+</div>
+<div class="category-grid" id="categories-geek"></div>
+</section>
+<footer class="store-footer">
+<div class="footer-grid">
+<div>
+<div class="footer-brand-name">MATHEORY</div>
+<p class="footer-brand-desc">O universo geek em forma de roupa. Cada peça carrega uma história, um mundo, um personagem que te define.</p>
+</div>
+<div class="footer-col"><p class="footer-col-title">Loja</p><a href="#">Novidades</a><a href="#">Coleções</a><a href="#">Colaborações</a><a href="#">Sale</a></div>
+<div class="footer-col"><p class="footer-col-title">Suporte</p><a href="#">Minha conta</a><a href="#">Rastrear pedido</a><a href="#">Trocas</a><a href="#">Contato</a></div>
+<div class="footer-col"><p class="footer-col-title">Empresa</p><a href="#">Sobre nós</a><a href="#">Blog</a><a href="#">Parceiros</a><a href="#">Termos</a></div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 MATHEORY GEEK. Todos os direitos reservados.</p>
+<p>VISA · MASTERCARD · PIX · BOLETO</p>
+</div>
+</footer>
+<!-- Modal -->
+
+<!-- Cart Drawer -->
+
+</div>
+<!-- ESPORTE -->
+<div class="page store-page" id="page-esporte">
+<header class="store-header">
+<div class="store-header-top">
+<button class="store-back-btn" onclick="Navigation.goHome()"><i class="fas fa-arrow-left"></i> Universos</button>
+<div class="store-logo">MATHEORY <small>Universo Esporte</small></div>
+<div class="store-header-icons">
+<button><i class="fas fa-search"></i></button>
+<button><i class="fas fa-heart"></i></button>
+<button class="cart-btn-wrap" onclick="Cart.openDrawer()">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-count-badge" style="display:none">0</span>
+</button>
+</div>
+</div>
+<nav class="store-nav" id="nav-esporte"></nav>
+</header>
+<section class="store-hero">
+<div class="store-hero-bg"></div>
+<div class="store-hero-overlay"></div>
+<div class="store-hero-content" id="hero-content-esporte"></div>
+</section>
+<section class="store-section">
+<div class="section-header">
+<div><h2 class="section-title">Performance</h2><p class="section-meta">Equipamentos para vencer</p></div>
+<a class="section-all-link" href="#">Ver todos <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="product-grid" id="products-esporte"></div>
+</section>
+<div class="banner-strip" id="banner-esporte"></div>
+<section class="store-section" style="padding-top:0">
+<div class="section-header"><div><h2 class="section-title">Modalidades</h2><p class="section-meta">Encontre o seu esporte</p></div></div>
+<div class="category-grid" id="categories-esporte"></div>
+</section>
+<footer class="store-footer">
+<div class="footer-grid">
+<div><div class="footer-brand-name">MATHEORY</div><p class="footer-brand-desc">Performance e estilo unidos em cada peça. Para atletas que vivem com intensidade dentro e fora das quadras.</p></div>
+<div class="footer-col"><p class="footer-col-title">Esportes</p><a href="#">Futebol</a><a href="#">Basketball</a><a href="#">Running</a><a href="#">Training</a></div>
+<div class="footer-col"><p class="footer-col-title">Suporte</p><a href="#">Minha conta</a><a href="#">Rastrear pedido</a><a href="#">Trocas</a><a href="#">Contato</a></div>
+<div class="footer-col"><p class="footer-col-title">Empresa</p><a href="#">Sobre nós</a><a href="#">Blog</a><a href="#">Parceiros</a><a href="#">Termos</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 MATHEORY ESPORTE.</p><p>VISA · MASTERCARD · PIX · BOLETO</p></div>
+</footer>
+
+
+</div>
+<!-- CRISTÃ -->
+<div class="page store-page" id="page-crista">
+<header class="store-header">
+<div class="store-header-top">
+<button class="store-back-btn" onclick="Navigation.goHome()"><i class="fas fa-arrow-left"></i> Universos</button>
+<div class="store-logo">MATHEORY <small>Universo Cristã</small></div>
+<div class="store-header-icons">
+<button><i class="fas fa-search"></i></button>
+<button><i class="fas fa-heart"></i></button>
+<button class="cart-btn-wrap" onclick="Cart.openDrawer()">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-count-badge" style="display:none">0</span>
+</button>
+</div>
+</div>
+<nav class="store-nav" id="nav-crista"></nav>
+</header>
+<section class="store-hero">
+<div class="store-hero-bg"></div>
+<div class="store-hero-overlay"></div>
+<div class="store-hero-content" id="hero-content-crista"></div>
+</section>
+<section class="store-section">
+<div class="section-header">
+<div><h2 class="section-title">Com Propósito</h2><p class="section-meta">Peças que transmitem mensagem</p></div>
+<a class="section-all-link" href="#">Ver todos <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="product-grid" id="products-crista"></div>
+</section>
+<div class="banner-strip" id="banner-crista"></div>
+<section class="store-section" style="padding-top:0">
+<div class="section-header"><div><h2 class="section-title">Categorias</h2><p class="section-meta">Encontre sua mensagem</p></div></div>
+<div class="category-grid" id="categories-crista"></div>
+</section>
+<footer class="store-footer">
+<div class="footer-grid">
+<div><div class="footer-brand-name">MATHEORY</div><p class="footer-brand-desc">Cada peça é uma declaração de fé. Criadas para quem vive com propósito e quer expressar sua crença com elegância.</p></div>
+<div class="footer-col"><p class="footer-col-title">Loja</p><a href="#">Novidades</a><a href="#">Coleções</a><a href="#">Presentes</a><a href="#">Devocionais</a></div>
+<div class="footer-col"><p class="footer-col-title">Suporte</p><a href="#">Minha conta</a><a href="#">Rastrear pedido</a><a href="#">Trocas</a><a href="#">Contato</a></div>
+<div class="footer-col"><p class="footer-col-title">Empresa</p><a href="#">Sobre nós</a><a href="#">Blog</a><a href="#">Parceiros</a><a href="#">Termos</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 MATHEORY CRISTÃ.</p><p>VISA · MASTERCARD · PIX · BOLETO</p></div>
+</footer>
+
+
+</div>
+<!-- STREET -->
+<div class="page store-page" id="page-street">
+<header class="store-header">
+<div class="store-header-top">
+<button class="store-back-btn" onclick="Navigation.goHome()"><i class="fas fa-arrow-left"></i> Universos</button>
+<div class="store-logo">MATHEORY <small>Universo Street</small></div>
+<div class="store-header-icons">
+<button><i class="fas fa-search"></i></button>
+<button><i class="fas fa-heart"></i></button>
+<button class="cart-btn-wrap" onclick="Cart.openDrawer()">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-count-badge" style="display:none">0</span>
+</button>
+</div>
+</div>
+<nav class="store-nav" id="nav-street"></nav>
+</header>
+<section class="store-hero">
+<div class="store-hero-bg"></div>
+<div class="store-hero-overlay"></div>
+<div class="store-hero-content" id="hero-content-street"></div>
+</section>
+<section class="store-section">
+<div class="section-header">
+<div><h2 class="section-title">Fresh Drops</h2><p class="section-meta">O que acabou de chegar</p></div>
+<a class="section-all-link" href="#">Ver todos <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="product-grid" id="products-street"></div>
+</section>
+<div class="banner-strip" id="banner-street"></div>
+<section class="store-section" style="padding-top:0">
+<div class="section-header"><div><h2 class="section-title">Categorias</h2><p class="section-meta">Seu estilo, seu território</p></div></div>
+<div class="category-grid" id="categories-street"></div>
+</section>
+<footer class="store-footer">
+<div class="footer-grid">
+<div><div class="footer-brand-name">MATHEORY</div><p class="footer-brand-desc">Das ruas para o mundo. Streetwear com personalidade, criado para quem não segue tendências — faz as suas.</p></div>
+<div class="footer-col"><p class="footer-col-title">Loja</p><a href="#">Drops</a><a href="#">Colabs</a><a href="#">Archive</a><a href="#">Sale</a></div>
+<div class="footer-col"><p class="footer-col-title">Suporte</p><a href="#">Minha conta</a><a href="#">Rastrear pedido</a><a href="#">Trocas</a><a href="#">Contato</a></div>
+<div class="footer-col"><p class="footer-col-title">Empresa</p><a href="#">Sobre nós</a><a href="#">Blog</a><a href="#">Parceiros</a><a href="#">Termos</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 MATHEORY STREET.</p><p>VISA · MASTERCARD · PIX · BOLETO</p></div>
+</footer>
+
+
+</div>
+<!-- Scripts -->
+<script src="data/products.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/stars.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    Renderer.buildAll();
+    Navigation.bindStoreParallax();
+  });
+</script>
+<div aria-modal="true" class="modal-backdrop" id="modal-backdrop-geek" role="dialog">
+<div class="modal-box">
+<!-- Close button -->
+<button class="modal-close-btn" onclick="Modal.close()"><i class="fas fa-times"></i></button>
+<!-- LEFT: Gallery column — hero image + row of 4 thumbnails -->
+<div class="modal-gallery-col">
+<div class="modal-main-img-wrap">
+<img alt="" class="modal-main-img" src=""/>
+<span class="modal-img-badge"></span>
+</div>
+<div class="modal-thumbs"></div>
+</div>
+<!-- RIGHT: Info column — all product details, sizes, colors, qty, CTAs -->
+<div class="modal-info-col">
+<p class="modal-category-tag"></p>
+<h2 class="modal-product-name"></h2>
+<p class="modal-product-meta"></p>
+<div class="modal-price-row">
+<span class="modal-price"></span>
+<span class="modal-price-old"></span>
+</div>
+<p class="modal-price-installments"></p>
+<!-- Feature highlights (built dynamically by modal.js) -->
+<div class="modal-features-list"></div>
+<p class="modal-section-label">Tamanho</p>
+<div class="modal-sizes"></div>
+<p class="modal-section-label">Cor</p>
+<div class="modal-colors"></div>
+<p class="modal-section-label">Quantidade</p>
+<div class="modal-qty-row">
+<div class="qty-control">
+<button class="qty-btn" onclick="Modal.changeQty(-1)"><i class="fas fa-minus"></i></button>
+<span class="modal-qty-value qty-value">1</span>
+<button class="qty-btn" onclick="Modal.changeQty(1)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="modal-cta-row">
+<button class="modal-add-cart-btn" onclick="Modal.addToCart()">
+<i class="fas fa-bag-shopping"></i> Adicionar ao Carrinho
+          </button>
+<button class="modal-wishlist-btn">
+<i class="fas fa-heart"></i> Salvar nos Favoritos
+          </button>
+</div>
+<div class="modal-description"><p></p></div>
+</div>
+<!-- BOTTOM: Related products — spans both columns -->
+<div class="modal-related">
+<div class="modal-related-header">
+<h3 class="modal-related-title">Você também pode gostar</h3>
+<span class="modal-related-subtitle">Peças do mesmo universo</span>
+</div>
+<div class="modal-related-grid"></div>
+</div>
+</div>
+</div><div class="cart-drawer-backdrop" id="cart-backdrop-geek">
+<div class="cart-drawer">
+<div class="cart-drawer-header">
+<h3 class="cart-drawer-title">Meu Carrinho</h3>
+<button class="cart-drawer-close" onclick="Cart.closeDrawer()"><i class="fas fa-times"></i></button>
+</div>
+<div class="cart-items-list" id="cart-items-geek"></div>
+<div class="cart-drawer-footer" id="cart-footer-geek"></div>
+</div>
+</div><div aria-modal="true" class="modal-backdrop" id="modal-backdrop-esporte" role="dialog">
+<div class="modal-box">
+<!-- Close button -->
+<button class="modal-close-btn" onclick="Modal.close()"><i class="fas fa-times"></i></button>
+<!-- LEFT: Gallery column — hero image + row of 4 thumbnails -->
+<div class="modal-gallery-col">
+<div class="modal-main-img-wrap">
+<img alt="" class="modal-main-img" src=""/>
+<span class="modal-img-badge"></span>
+</div>
+<div class="modal-thumbs"></div>
+</div>
+<!-- RIGHT: Info column — all product details, sizes, colors, qty, CTAs -->
+<div class="modal-info-col">
+<p class="modal-category-tag"></p>
+<h2 class="modal-product-name"></h2>
+<p class="modal-product-meta"></p>
+<div class="modal-price-row">
+<span class="modal-price"></span>
+<span class="modal-price-old"></span>
+</div>
+<p class="modal-price-installments"></p>
+<!-- Feature highlights (built dynamically by modal.js) -->
+<div class="modal-features-list"></div>
+<p class="modal-section-label">Tamanho</p>
+<div class="modal-sizes"></div>
+<p class="modal-section-label">Cor</p>
+<div class="modal-colors"></div>
+<p class="modal-section-label">Quantidade</p>
+<div class="modal-qty-row">
+<div class="qty-control">
+<button class="qty-btn" onclick="Modal.changeQty(-1)"><i class="fas fa-minus"></i></button>
+<span class="modal-qty-value qty-value">1</span>
+<button class="qty-btn" onclick="Modal.changeQty(1)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="modal-cta-row">
+<button class="modal-add-cart-btn" onclick="Modal.addToCart()">
+<i class="fas fa-bag-shopping"></i> Adicionar ao Carrinho
+          </button>
+<button class="modal-wishlist-btn">
+<i class="fas fa-heart"></i> Salvar nos Favoritos
+          </button>
+</div>
+<div class="modal-description"><p></p></div>
+</div>
+<!-- BOTTOM: Related products — spans both columns -->
+<div class="modal-related">
+<div class="modal-related-header">
+<h3 class="modal-related-title">Você também pode gostar</h3>
+<span class="modal-related-subtitle">Peças do mesmo universo</span>
+</div>
+<div class="modal-related-grid"></div>
+</div>
+</div>
+</div><div class="cart-drawer-backdrop" id="cart-backdrop-esporte">
+<div class="cart-drawer">
+<div class="cart-drawer-header"><h3 class="cart-drawer-title">Meu Carrinho</h3><button class="cart-drawer-close" onclick="Cart.closeDrawer()"><i class="fas fa-times"></i></button></div>
+<div class="cart-items-list" id="cart-items-esporte"></div>
+<div class="cart-drawer-footer" id="cart-footer-esporte"></div>
+</div>
+</div><div aria-modal="true" class="modal-backdrop" id="modal-backdrop-crista" role="dialog">
+<div class="modal-box">
+<!-- Close button -->
+<button class="modal-close-btn" onclick="Modal.close()"><i class="fas fa-times"></i></button>
+<!-- LEFT: Gallery column — hero image + row of 4 thumbnails -->
+<div class="modal-gallery-col">
+<div class="modal-main-img-wrap">
+<img alt="" class="modal-main-img" src=""/>
+<span class="modal-img-badge"></span>
+</div>
+<div class="modal-thumbs"></div>
+</div>
+<!-- RIGHT: Info column — all product details, sizes, colors, qty, CTAs -->
+<div class="modal-info-col">
+<p class="modal-category-tag"></p>
+<h2 class="modal-product-name"></h2>
+<p class="modal-product-meta"></p>
+<div class="modal-price-row">
+<span class="modal-price"></span>
+<span class="modal-price-old"></span>
+</div>
+<p class="modal-price-installments"></p>
+<!-- Feature highlights (built dynamically by modal.js) -->
+<div class="modal-features-list"></div>
+<p class="modal-section-label">Tamanho</p>
+<div class="modal-sizes"></div>
+<p class="modal-section-label">Cor</p>
+<div class="modal-colors"></div>
+<p class="modal-section-label">Quantidade</p>
+<div class="modal-qty-row">
+<div class="qty-control">
+<button class="qty-btn" onclick="Modal.changeQty(-1)"><i class="fas fa-minus"></i></button>
+<span class="modal-qty-value qty-value">1</span>
+<button class="qty-btn" onclick="Modal.changeQty(1)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="modal-cta-row">
+<button class="modal-add-cart-btn" onclick="Modal.addToCart()">
+<i class="fas fa-bag-shopping"></i> Adicionar ao Carrinho
+          </button>
+<button class="modal-wishlist-btn">
+<i class="fas fa-heart"></i> Salvar nos Favoritos
+          </button>
+</div>
+<div class="modal-description"><p></p></div>
+</div>
+<!-- BOTTOM: Related products — spans both columns -->
+<div class="modal-related">
+<div class="modal-related-header">
+<h3 class="modal-related-title">Você também pode gostar</h3>
+<span class="modal-related-subtitle">Peças do mesmo universo</span>
+</div>
+<div class="modal-related-grid"></div>
+</div>
+</div>
+</div><div class="cart-drawer-backdrop" id="cart-backdrop-crista">
+<div class="cart-drawer">
+<div class="cart-drawer-header"><h3 class="cart-drawer-title">Meu Carrinho</h3><button class="cart-drawer-close" onclick="Cart.closeDrawer()"><i class="fas fa-times"></i></button></div>
+<div class="cart-items-list" id="cart-items-crista"></div>
+<div class="cart-drawer-footer" id="cart-footer-crista"></div>
+</div>
+</div><div aria-modal="true" class="modal-backdrop" id="modal-backdrop-street" role="dialog">
+<div class="modal-box">
+<!-- Close button -->
+<button class="modal-close-btn" onclick="Modal.close()"><i class="fas fa-times"></i></button>
+<!-- LEFT: Gallery column — hero image + row of 4 thumbnails -->
+<div class="modal-gallery-col">
+<div class="modal-main-img-wrap">
+<img alt="" class="modal-main-img" src=""/>
+<span class="modal-img-badge"></span>
+</div>
+<div class="modal-thumbs"></div>
+</div>
+<!-- RIGHT: Info column — all product details, sizes, colors, qty, CTAs -->
+<div class="modal-info-col">
+<p class="modal-category-tag"></p>
+<h2 class="modal-product-name"></h2>
+<p class="modal-product-meta"></p>
+<div class="modal-price-row">
+<span class="modal-price"></span>
+<span class="modal-price-old"></span>
+</div>
+<p class="modal-price-installments"></p>
+<!-- Feature highlights (built dynamically by modal.js) -->
+<div class="modal-features-list"></div>
+<p class="modal-section-label">Tamanho</p>
+<div class="modal-sizes"></div>
+<p class="modal-section-label">Cor</p>
+<div class="modal-colors"></div>
+<p class="modal-section-label">Quantidade</p>
+<div class="modal-qty-row">
+<div class="qty-control">
+<button class="qty-btn" onclick="Modal.changeQty(-1)"><i class="fas fa-minus"></i></button>
+<span class="modal-qty-value qty-value">1</span>
+<button class="qty-btn" onclick="Modal.changeQty(1)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="modal-cta-row">
+<button class="modal-add-cart-btn" onclick="Modal.addToCart()">
+<i class="fas fa-bag-shopping"></i> Adicionar ao Carrinho
+          </button>
+<button class="modal-wishlist-btn">
+<i class="fas fa-heart"></i> Salvar nos Favoritos
+          </button>
+</div>
+<div class="modal-description"><p></p></div>
+</div>
+<!-- BOTTOM: Related products — spans both columns -->
+<div class="modal-related">
+<div class="modal-related-header">
+<h3 class="modal-related-title">Você também pode gostar</h3>
+<span class="modal-related-subtitle">Peças do mesmo universo</span>
+</div>
+<div class="modal-related-grid"></div>
+</div>
+</div>
+</div><div class="cart-drawer-backdrop" id="cart-backdrop-street">
+<div class="cart-drawer">
+<div class="cart-drawer-header"><h3 class="cart-drawer-title">Meu Carrinho</h3><button class="cart-drawer-close" onclick="Cart.closeDrawer()"><i class="fas fa-times"></i></button></div>
+<div class="cart-items-list" id="cart-items-street"></div>
+<div class="cart-drawer-footer" id="cart-footer-street"></div>
+</div>
+</div></body>
+</html>

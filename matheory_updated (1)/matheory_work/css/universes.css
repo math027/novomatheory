@@ -1,0 +1,198 @@
+/* ============================================================
+   UNIVERSES.CSS — Per-Universe CSS Variable Themes & Overrides
+   MATHEORY © 2024
+   ============================================================ */
+
+/* ============================================================
+   UNIVERSE: GEEK
+   Aesthetic: Deep space, cyan glow, mystical, Cinzel serif
+   ============================================================ */
+#page-geek {
+  --bg:          #04080f;
+  --header-bg:   rgba(4, 8, 15, 0.88);
+  --accent:      #38bdf8;
+  --accent-dim:  rgba(56, 189, 248, 0.3);
+  --accent-glow: rgba(56, 189, 248, 0.45);
+  --text:        #e0f2fe;
+  --text-muted:  rgba(186, 230, 253, 0.48);
+  --border:      rgba(56, 189, 248, 0.1);
+  --card-bg:     rgba(10, 18, 34, 0.85);
+  --img-bg:      rgba(8, 16, 30, 1);
+  --btn-text:    #04080f;
+  --btn-radius:  3px;
+  --card-radius: 4px;
+  --hero-gradient: linear-gradient(
+    100deg,
+    rgba(4, 8, 15, 0.95) 0%,
+    rgba(4, 8, 15, 0.55) 55%,
+    transparent 100%
+  );
+  --banner-bg:  linear-gradient(135deg, rgba(8, 16, 34, 1), rgba(16, 36, 80, 0.9));
+  --footer-bg:  rgba(3, 6, 12, 0.98);
+  --heading-font: 'Cinzel', serif;
+  --logo-font:    'Cinzel', serif;
+  --logo-glow:    0 0 28px rgba(56, 189, 248, 0.55);
+
+  background: var(--bg);
+  color: var(--text);
+}
+#page-geek .store-hero-bg {
+  background-image: url('../assets/fundo_geek.png');
+}
+/* subtle grain overlay */
+#page-geek::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+#page-geek .section-title { letter-spacing: 0.06em; }
+
+/* ============================================================
+   UNIVERSE: ESPORTE
+   Aesthetic: High-contrast black + fire orange, Bebas Neue
+   ============================================================ */
+#page-esporte {
+  --bg:          #0a0a0a;
+  --header-bg:   rgba(10, 10, 10, 0.94);
+  --accent:      #f97316;
+  --accent-dim:  rgba(249, 115, 22, 0.28);
+  --accent-glow: rgba(249, 115, 22, 0.45);
+  --text:        #ffffff;
+  --text-muted:  rgba(255, 255, 255, 0.42);
+  --border:      rgba(249, 115, 22, 0.13);
+  --card-bg:     rgba(18, 18, 18, 0.92);
+  --img-bg:      #141414;
+  --btn-text:    #0a0a0a;
+  --btn-radius:  2px;
+  --card-radius: 2px;
+  --hero-gradient: linear-gradient(
+    95deg,
+    rgba(10, 10, 10, 0.97) 0%,
+    rgba(10, 10, 10, 0.6) 55%,
+    transparent 100%
+  );
+  --banner-bg:  linear-gradient(135deg, #120800, rgba(249, 115, 22, 0.12));
+  --footer-bg:  #050505;
+  --heading-font: 'Bebas Neue', cursive;
+  --logo-font:    'Bebas Neue', cursive;
+  --logo-glow:    0 0 18px rgba(249, 115, 22, 0.38);
+
+  background: var(--bg);
+  color: var(--text);
+}
+#page-esporte .store-hero-bg {
+  background-image: url('../assets/fundo_sport.png');
+}
+#page-esporte .hero-main-title { font-size: clamp(3.5rem, 7vw, 7rem); letter-spacing: 0.02em; }
+#page-esporte .section-title   { font-size: 2.6rem; letter-spacing: 0.04em; text-transform: uppercase; }
+#page-esporte .store-logo       { letter-spacing: 0.12em; font-size: 1.6rem; }
+/* speed-stripe deco on hero */
+#page-esporte .store-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -48deg,
+    transparent,
+    transparent 3px,
+    rgba(249, 115, 22, 0.025) 3px,
+    rgba(249, 115, 22, 0.025) 6px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================================
+   UNIVERSE: CRISTÃ
+   Aesthetic: Warm gold on deep amber-black, Playfair Display
+   ============================================================ */
+#page-crista {
+  --bg:          #0e0900;
+  --header-bg:   rgba(14, 9, 0, 0.93);
+  --accent:      #d4a843;
+  --accent-dim:  rgba(212, 168, 67, 0.28);
+  --accent-glow: rgba(212, 168, 67, 0.38);
+  --text:        #f5e6c8;
+  --text-muted:  rgba(245, 230, 200, 0.42);
+  --border:      rgba(212, 168, 67, 0.13);
+  --card-bg:     rgba(28, 20, 6, 0.9);
+  --img-bg:      #1c1406;
+  --btn-text:    #0e0900;
+  --btn-radius:  0px;
+  --card-radius: 0px;
+  --hero-gradient: linear-gradient(
+    95deg,
+    rgba(14, 9, 0, 0.96) 0%,
+    rgba(14, 9, 0, 0.55) 60%,
+    transparent 100%
+  );
+  --banner-bg:  linear-gradient(135deg, #1a1000, rgba(212, 168, 67, 0.08));
+  --footer-bg:  #080500;
+  --heading-font: 'Playfair Display', serif;
+  --logo-font:    'Cinzel', serif;
+  --logo-glow:    0 0 24px rgba(212, 168, 67, 0.42);
+
+  background: var(--bg);
+  color: var(--text);
+}
+#page-crista .store-hero-bg {
+  background-image: url('../assets/fundo_geek.png');
+  filter: sepia(80%) saturate(0.55) hue-rotate(-12deg) brightness(0.52);
+}
+#page-crista .hero-main-title  { font-style: italic; }
+#page-crista .hero-eyebrow-tag { font-family: 'IM Fell English', serif; font-style: italic; letter-spacing: 0.22em; }
+#page-crista .section-title    { font-size: 1.8rem; font-style: italic; font-weight: 700; }
+/* golden radial glow */
+#page-crista .store-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 8% 50%, rgba(212, 168, 67, 0.1) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================================
+   UNIVERSE: STREET
+   Aesthetic: Raw black + red neon, Barlow Condensed brutalist
+   ============================================================ */
+#page-street {
+  --bg:          #0d0d0d;
+  --header-bg:   rgba(13, 13, 13, 0.97);
+  --accent:      #ef4444;
+  --accent-dim:  rgba(239, 68, 68, 0.28);
+  --accent-glow: rgba(239, 68, 68, 0.42);
+  --text:        #ffffff;
+  --text-muted:  rgba(255, 255, 255, 0.38);
+  --border:      rgba(239, 68, 68, 0.13);
+  --card-bg:     rgba(22, 22, 22, 0.92);
+  --img-bg:      #181818;
+  --btn-text:    #ffffff;
+  --btn-radius:  0px;
+  --card-radius: 0px;
+  --hero-gradient: linear-gradient(
+    95deg,
+    rgba(13, 13, 13, 0.98) 0%,
+    rgba(13, 13, 13, 0.65) 55%,
+    transparent 100%
+  );
+  --banner-bg:  linear-gradient(135deg, #130000, rgba(239, 68, 68, 0.09));
+  --footer-bg:  #080808;
+  --heading-font: 'Barlow Condensed', sans-serif;
+  --logo-font:    'Barlow Condensed', sans-serif;
+  --logo-glow:    none;
+
+  background: var(--bg);
+  color: var(--text);
+}
+#page-street .store-hero-bg {
+  background-image: url('../assets/fundo_street.png');
+}
+#page-street .hero-main-title  { font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; font-size: clamp(3.2rem, 7vw, 7rem); }
+#page-street .section-title    { font-size: 2.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+#page-street .store-logo       { font-weight: 800; letter-spacing: 0.06em; font-size: 1.6rem; }
+#page-street .hero-eyebrow-tag { font-size: 0.7rem; letter-spacing: 0.3em; }
